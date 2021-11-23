@@ -1,17 +1,18 @@
-// Navigation menu - responsive
+//Javacript for responsive navigation menu
 const menuBtn = document.querySelector('.menu-btn');
 const navigation = document.querySelector('.navigation');
-const slides = document.querySelectorAll('.video-slide');
 
 menuBtn.addEventListener('click', () => {
   menuBtn.classList.toggle('active');
   navigation.classList.toggle('active');
 });
 
-// Javascript for video slider navigation
+//Javacript for video slider navigation
 const btns = document.querySelectorAll('.nav-btn');
+const slides = document.querySelectorAll('.video-slide');
+const contents = document.querySelectorAll('.content');
 
-let sliderNav = function (manual) {
+var sliderNav = function (manual) {
   btns.forEach((btn) => {
     btn.classList.remove('active');
   });
@@ -20,8 +21,13 @@ let sliderNav = function (manual) {
     slide.classList.remove('active');
   });
 
+  contents.forEach((content) => {
+    content.classList.remove('active');
+  });
+
   btns[manual].classList.add('active');
   slides[manual].classList.add('active');
+  contents[manual].classList.add('active');
 };
 
 btns.forEach((btn, i) => {

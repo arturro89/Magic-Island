@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
 * {
-  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
-/* Section header start */
+
 header {
   z-index: 999;
   position: absolute;
@@ -21,7 +21,7 @@ header {
 }
 
 header .brand {
-  color: white;
+  color: #fff;
   font-size: 1.5em;
   font-weight: 700;
   text-transform: uppercase;
@@ -34,7 +34,7 @@ header .navigation {
 
 header .navigation .navigation-items a {
   position: relative;
-  color: white;
+  color: #fff;
   font-size: 1em;
   font-weight: 500;
   text-decoration: none;
@@ -45,7 +45,7 @@ header .navigation .navigation-items a {
 header .navigation .navigation-items a:before {
   content: '';
   position: absolute;
-  background-color: white;
+  background: #fff;
   width: 0;
   height: 3px;
   bottom: 0;
@@ -57,9 +57,6 @@ header .navigation .navigation-items a:hover:before {
   width: 100%;
 }
 
-/* Section header end*/
-
-/* Section home start */
 section {
   padding: 100px 200px;
 }
@@ -71,10 +68,10 @@ section {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: #2696e9;
+  background: #2696e9;
 }
 
-.home:before {
+/* .home:before {
   z-index: 777;
   content: '';
   position: absolute;
@@ -83,13 +80,18 @@ section {
   height: 100%;
   top: 0;
   left: 0;
-}
+} */
 
 .home .content {
   z-index: 888;
-  color: white;
+  color: #fff;
   width: 70%;
   margin-top: 50px;
+  display: none;
+}
+
+.home .content.active {
+  display: block;
 }
 
 .home .content h1 {
@@ -111,13 +113,13 @@ section {
 }
 
 .home .content a {
-  background-color: white;
-  padding: 15px 35px;
+  background: #fff;
+  padding: 12px 32px;
   color: #1680ac;
   font-size: 1.1em;
   font-weight: 500;
   text-decoration: none;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .home .media-icons {
@@ -130,9 +132,9 @@ section {
 }
 
 .home .media-icons a {
-  color: white;
+  color: #fff;
   font-size: 1.6em;
-  transition: 0.3 ease;
+  transition: 0.3s ease;
 }
 
 .home .media-icons a:not(:last-child) {
@@ -152,7 +154,6 @@ section {
   height: 100%;
   object-fit: cover;
 }
-/* Section home end*/
 
 .slider-navigation {
   z-index: 888;
@@ -167,7 +168,7 @@ section {
 .slider-navigation .nav-btn {
   width: 12px;
   height: 12px;
-  background-color: white;
+  background: #fff;
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
@@ -175,7 +176,7 @@ section {
 }
 
 .slider-navigation .nav-btn.active {
-  background-color: #2696e9;
+  background: #2696e9;
 }
 
 .slider-navigation .nav-btn:not(:last-child) {
@@ -202,9 +203,11 @@ section {
   header {
     padding: 12px 20px;
   }
+
   section {
     padding: 100px 20px;
   }
+
   .home .media-icons {
     right: 15px;
   }
@@ -212,6 +215,7 @@ section {
   header .navigation {
     display: none;
   }
+
   header .navigation.active {
     position: fixed;
     width: 100%;
@@ -231,12 +235,12 @@ section {
   }
 
   header .navigation .navigation-items a:before {
-    background-color: #222;
+    background: #222;
     height: 5px;
   }
 
   header .navigation.active .navigation-items {
-    background: white;
+    background: #fff;
     width: 600px;
     max-width: 600px;
     margin: 20px;
@@ -247,7 +251,7 @@ section {
     border-radius: 5px;
     box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
   }
-  /* Menu section started  */
+
   .menu-btn {
     background: url(menu.png) no-repeat;
     background-size: 30px;
@@ -255,13 +259,21 @@ section {
     width: 40px;
     height: 40px;
     cursor: pointer;
-    transition: 0.3 ease;
+    transition: 0.3s ease;
   }
+
   .menu-btn.active {
     z-index: 999;
     background: url(close.png) no-repeat;
     background-size: 25px;
     background-position: center;
     transition: 0.3s ease;
+  }
+}
+
+@media (max-width: 560px) {
+  .home .content h1 {
+    font-size: 3em;
+    line-height: 60px;
   }
 }
